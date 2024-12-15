@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Live Camera</title>
+  <link rel="stylesheet" href="/static/styles.css">
+</head>
+<body>
+  <div class="container">
+    <h1>Live Camera</h1>
+    <video id="video" autoplay></video>
+    <button id="flip">Flip Camera</button>
+    <script>
+      const video = document.getElementById("video");
+      const constraints = { video: { facingMode: "user" } };
+
+      navigator.mediaDevices.getUserMedia(constraints)
+        .then(stream => video.srcObject = stream)
+        .catch(console.error);
+
+      document.getElementById("flip").addEventListener("click", () => {
+        constraints.video.facingMode = constraints.video.facingMode === "user" ? "environment" : "user";
+        navigator.mediaDevices.getUserMedia(constraints)
+          .then(stream => video.srcObject = stream)
+          .catch(console.error);
+      });
+    </script>
+  </div>
+</body>
+</html>

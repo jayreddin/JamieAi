@@ -1,0 +1,42 @@
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  background: linear-gradient(to right, #001f3f, #001737);
+  color: white;
+}
+
+.container {
+  max-width: 600px;
+  margin: 0 auto;
+  padding: 20px;
+  text-align: center;
+}
+
+h1 {
+  font-size: 2.5rem;
+  margin-bottom: 20px;
+}
+
+.menu a, button {
+  display: block;
+  margin: 10px 0;
+  padding: 10px 20px;
+  background: #0074d9;
+  color: white;
+  text-decoration: none;
+  border-radius: 5px;
+  transition: background 0.3s;
+}
+
+button:hover, .menu a:hover {
+  background: #39CCCC;
+}
+
+form input, form textarea {
+  display: block;
+  width: 100%;
+  margin: 10px 0;
+  padding: 10px;
+  border: none;
+  border-radius: 5px;
+}
